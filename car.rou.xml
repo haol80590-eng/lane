@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    车辆配置（2025-12-02 修改）
+    
+    关键修改：departSpeed="0"
+    原因：让车辆从0加速，更符合现实
+    效果：
+    1. 低速时 SUMO 会阻止不安全换道
+    2. 车辆需要先加速、拉开车距
+    3. 自然形成"中间位置换道"的行为模式
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicles: departSpeed="0" 表示从静止开始加速 -->
+    <trip id="l1" depart="0.00" departSpeed="0" color="18,255,0" departLane="random" from="E0" to="E2"/>
+    <trip id="l2" depart="0.50" departSpeed="0" color="18,255,0" departLane="random" from="E0" to="E2"/>
+    <trip id="l3" depart="0.80" departSpeed="0" color="18,255,0" departLane="random" from="E0" to="E2"/>
+    <trip id="r1" depart="1.00" departSpeed="0" color="blue" departLane="random" from="E0" to="E3"/>
+    <trip id="r2" depart="1.10" departSpeed="0" color="blue" departLane="random" from="E0" to="E3"/>
+    <trip id="r3" depart="1.20" departSpeed="0" color="blue" departLane="random" from="E0" to="E3"/>
+    <trip id="s1" depart="1.50" departSpeed="0" color="cyan" departLane="random" from="E0" to="-E1"/>
+    <trip id="s2" depart="1.70" departSpeed="0" color="cyan" departLane="random" from="E0" to="-E1"/>
+    <trip id="s3" depart="2.00" departSpeed="0" color="cyan" departLane="random" from="E0" to="-E1"/>
+    <trip id="s4" depart="2.10" departSpeed="0" color="cyan" departLane="random" from="E0" to="-E1"/>
+</routes>
